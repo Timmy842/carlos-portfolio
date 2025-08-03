@@ -12,6 +12,20 @@ export const personalInfo = {
 
 export const workExperience = [
   {
+    company: "Resistenias Industriales Maxiwatt S.L.",
+    location: "Alicante, Comunidad Valenciana, España - Hibrido",
+    position: "PHP Backend Developer",
+    period: "Abril 2025 - Actualidad",
+    achievements: [
+      "Desarrollo y mantenimiento de aplicaciones web utilizando PHP (Laravel) en el backend.",
+      "Participación en tareas de frontend con Angular, asegurando una integración fluida con las APIs backend.",
+      "Colaboración en la documentación técnica de los proyectos para facilitar su mantenimiento y escalabilidad.",
+      "Subida a servidor y despliegue de aplicaciones en entornos de producción en momentos clave del desarrollo.",
+      "Tareas de mantenimiento correctivo y evolutivo, incluyendo resolución de incidencias críticas.",
+      "Soporte en el mantenimiento de hardware, garantizando el correcto funcionamiento de los equipos y sistemas informáticos."
+    ],
+  },
+  {
     company: "Lynx View",
     location: "Alicante, Comunidad Valenciana, España - Hibrido",
     position: "Full-stack Developer",
