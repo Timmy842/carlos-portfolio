@@ -3,7 +3,7 @@ import { desc } from "framer-motion/client";
 export const personalInfo = {
   name: "Carlos García",
   location: "Alicante, España",
-  email: "garciadurendezcarlos@gmail.com",
+  email: "carlos@hackwithcarlos.com",
   role: "Security Operations Center (SOC) Analyst",
   github: "https://github.com/Timmy842",
   linkedin: "https://www.linkedin.com/in/carlos-garcia-durendez/",
