@@ -4,7 +4,22 @@ import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
 import { GlassCard } from "./ui/glass-card";
 
-function SkillTag({ skill, index }: { skill: string; index: number }) {
+function SkillTag({
+  skill,
+  index,
+  variant = "default",
+}: {
+  skill: string;
+  index: number;
+  variant?: "security" | "redteam" | "default";
+}) {
+  const colorClass =
+    variant === "security"
+      ? "border-green-500/20 text-green-700 dark:text-green-400/90 bg-green-500/5"
+      : variant === "redteam"
+        ? "border-cyan-500/20 text-cyan-700 dark:text-cyan-400/90 bg-cyan-500/5"
+        : "border-purple-500/10 bg-muted/80";
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
@@ -16,7 +31,7 @@ function SkillTag({ skill, index }: { skill: string; index: number }) {
         delay: 0.05 * index,
       }}
       whileHover={{ scale: 1.05, y: -2 }}
-      className="px-3 py-1 bg-muted/80 backdrop-blur-sm rounded-md text-sm border border-purple-500/10 shadow-sm"
+      className={`px-3 py-1 backdrop-blur-sm rounded-md text-sm border shadow-sm font-mono ${colorClass}`}
     >
       {skill}
     </motion.div>
@@ -53,7 +68,7 @@ export default function SkillsSection() {
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
           <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
-            🛠️ Skills
+            Skills
           </h2>
         </MotionWrapper>
 
@@ -64,44 +79,60 @@ export default function SkillsSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
+          {/* Security section header */}
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-semibold uppercase tracking-widest text-green-600 dark:text-green-400">
+              Ciberseguridad
+            </span>
+            <div className="flex-1 h-px bg-green-500/20"></div>
+          </div>
+
           <motion.div variants={skillCategoryVariants}>
-            <GlassCard className="p-4">
+            <GlassCard className="p-4 dark:border-green-500/10">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-xl">💻</span> Ciberseguridad
+                <span className="mr-2 text-green-500">◈</span> Core
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.cibersecurityGlobal.map((skill, index) => (
-                  <SkillTag key={skill} skill={skill} index={index} />
+                  <SkillTag key={skill} skill={skill} index={index} variant="security" />
                 ))}
               </div>
             </GlassCard>
           </motion.div>
 
           <motion.div variants={skillCategoryVariants}>
-            <GlassCard className="p-4">
+            <GlassCard className="p-4 dark:border-cyan-500/10">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-xl">🐱‍💻🌐</span> Red Team
+                <span className="mr-2 text-cyan-500">▶</span> Red Team &amp; Offensive
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.redTeam.map((skill, index) => (
-                  <SkillTag key={skill} skill={skill} index={index} />
+                  <SkillTag key={skill} skill={skill} index={index} variant="redteam" />
                 ))}
               </div>
             </GlassCard>
           </motion.div>
 
           <motion.div variants={skillCategoryVariants}>
-            <GlassCard className="p-4">
+            <GlassCard className="p-4 dark:border-green-500/10">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-xl">🌐</span> Blue Team
+                <span className="mr-2 text-green-500">■</span> Blue Team &amp; Defensive
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.blueTeam.map((skill, index) => (
-                  <SkillTag key={skill} skill={skill} index={index} />
+                  <SkillTag key={skill} skill={skill} index={index} variant="security" />
                 ))}
               </div>
             </GlassCard>
           </motion.div>
+
+          {/* Development section header */}
+          <div className="flex items-center gap-2 pt-2">
+            <span className="text-xs font-semibold uppercase tracking-widest text-purple-600 dark:text-purple-400">
+              Desarrollo
+            </span>
+            <div className="flex-1 h-px bg-purple-500/20"></div>
+          </div>
 
           <motion.div variants={skillCategoryVariants}>
             <GlassCard className="p-4">
