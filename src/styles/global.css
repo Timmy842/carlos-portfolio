@@ -118,3 +118,27 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Cyber / Security themed utilities */
+.cyber-glow {
+  text-shadow: 0 0 8px oklch(0.7 0.2 160), 0 0 20px oklch(0.6 0.2 160 / 0.4);
+}
+
+.cyber-border {
+  border-color: oklch(0.6 0.18 160 / 0.3);
+}
+
+.terminal-cursor::after {
+  content: "_";
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}

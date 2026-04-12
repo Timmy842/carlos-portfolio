@@ -13,17 +13,17 @@ export default function GlassHeader() {
     <header className="sticky z-50 w-full backdrop-blur-md backdrop-filter bg-background/70 dark:bg-background/40 border-b border-border/40 supports-[backdrop-filter]:bg-background/60">
       <div className="container max-w-4xl mx-auto p-4 flex justify-between items-center">
         <motion.a
-          className="flex items-center text-lg font-medium"
+          className="flex items-center text-lg font-medium font-mono"
           href="/"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          ✨ {personalInfo.name}
+          <span className="text-green-500 mr-1">$</span> {personalInfo.name}
         </motion.a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-          {["experience", "education", "certifications", "projects", "skills"].map(
+          {["experience", "education", "awards", "ctf", "projects", "skills"].map(
             (item, index) => (
               <motion.a
                 key={item}
@@ -34,12 +34,12 @@ export default function GlassHeader() {
                 transition={{ duration: 0.2, delay: index * 0.1 }}
                 whileHover={{ y: -2 }}
               >
-                {item === "experience" && "💼 "}
-                {item === "skills" && "🛠️ "}
-                {item === "projects" && "🚀 "}
-                {item === "certifications" && "🏆 "}
-                {item === "education" && "🎓 "}
-                {item.charAt(0).toUpperCase() + item.slice(1)}
+                {item === "experience" && "Experience"}
+                {item === "awards" && "Certifications"}
+                {item === "education" && "Education"}
+                {item === "ctf" && "CTF"}
+                {item === "skills" && "Skills"}
+                {item === "projects" && "Projects"}
               </motion.a>
             )
           )}
@@ -71,26 +71,26 @@ export default function GlassHeader() {
             transition={{ duration: 0.3 }}
           >
             <nav className="flex flex-col space-y-4 text-sm font-medium">
-              {["experience", "skills", "projects", "certifications", "education"].map(
-                (item, index) => (
-                  <motion.a
-                    key={item}
-                    href={`#${item}`}
-                    className="transition-colors hover:text-foreground/80 text-foreground/60 py-2"
-                    onClick={toggleMenu}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.2, delay: index * 0.1 }}
-                  >
-                    {item === "experience" && "💼 "}
-                    {item === "skills" && "🛠️ "}
-                    {item === "projects" && "🚀 "}
-                    {item === "certifications" && "🏆 "}
-                    {item === "education" && "🎓 "}
-                    {item.charAt(0).toUpperCase() + item.slice(1)}
-                  </motion.a>
-                )
-              )}
+              {[
+                { id: "experience", label: "Experience" },
+                { id: "education", label: "Education" },
+                { id: "awards", label: "Certifications" },
+                { id: "ctf", label: "CTF & Plataformas" },
+                { id: "projects", label: "Projects" },
+                { id: "skills", label: "Skills" },
+              ].map((item, index) => (
+                <motion.a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className="transition-colors hover:text-foreground/80 text-foreground/60 py-2"
+                  onClick={toggleMenu}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.2, delay: index * 0.1 }}
+                >
+                  {item.label}
+                </motion.a>
+              ))}
             </nav>
           </motion.div>
         )}

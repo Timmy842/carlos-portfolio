@@ -1,5 +1,3 @@
-import { desc } from "framer-motion/client";
-
 export const personalInfo = {
   name: "Carlos García",
   location: "Alicante, España",
@@ -141,7 +139,6 @@ export const skills = {
     "Volatility",
     "Autopsy",
     "FTK Imager",
-    "Wireshark",
     "Suricata",
     "Cuckoo Sandbox",
     "RATs (Remote Access Trojans)",
@@ -153,14 +150,14 @@ export const skills = {
     "OWASP Top 10",
     "Proxychains",
     "Tor",
-    "Doxing",
     "DNS Spoofing",
     "ARP Spoofing",
     "XSS (Cross-Site Scripting)",
     "CSRF (Cross-Site Request Forgery)",
     "SQL Injection",
     "Privilege Escalation",
-    "Privilege Escalation"
+    "Buffer Overflow",
+    "Reverse Engineering",
   ],
   blueTeam: [
     "Splunk",
@@ -253,36 +250,79 @@ export const skills = {
 
 export const projects = [
   {
-    title: "Port Scanner en Python",
+    title: "Port Scanner",
     github: "https://github.com/Timmy842/port-scanner",
+    tags: ["Python", "Sockets", "Threading", "Security"],
+    category: "security",
     description: [
-      "He desarrollado un Port Scanner en Python 🐍 que permite escanear puertos abiertos en una máquina objetivo de manera eficiente.",
-      "Usa sockets para la detección de puertos abiertos.",
-      "Soporta escaneos en rango de puertos personalizados.",
-      "Implementa hilos para mejorar el rendimiento.",
+      "Herramienta de reconocimiento de red desarrollada en Python que identifica puertos abiertos en una máquina objetivo de forma eficiente.",
+      "Implementa sockets TCP/UDP para detección precisa de servicios activos.",
+      "Soporte para rangos de puertos personalizados y modo verbose.",
+      "Multithreading para escaneos paralelos con mayor rendimiento.",
     ],
   },
   {
-    title: "TODOs TS",
-    github: "https://github.com/Timmy842/todo-ts",
+    title: "Network Traffic Analyzer",
+    github: "https://github.com/Timmy842",
+    tags: ["Python", "Scapy", "Wireshark", "PCAP"],
+    category: "security",
     description: [
-      "Aplicación desarrollada en TypeScript y React que permite gestionar listas TODO. En un futuro se implementarán funciones backend para guardar las tareas.",
+      "Analizador de tráfico de red basado en Python con Scapy para captura e inspección de paquetes en tiempo real.",
+      "Detecta patrones sospechosos como escaneos, ARP Spoofing y conexiones anómalas.",
+      "Genera informes en formato PCAP compatibles con Wireshark.",
+      "Filtra por protocolo (TCP/UDP/ICMP), IP de origen/destino y puertos.",
     ],
   },
   {
-    title: "GifExpertApp",
-    github: "https://github.com/Timmy842/GifExpertApp",
+    title: "Vulnerability Scanner",
+    github: "https://github.com/Timmy842",
+    tags: ["Python", "Nmap", "CVE", "Automation"],
+    category: "security",
     description: [
-      "Aplicación desarrollada en TypeScript y React que permite gestionar listas TODO. En un futuro se implementarán funciones backend para guardar las tareas.",
+      "Script de automatización de auditorías de seguridad que integra Nmap y APIs de CVE para evaluar vulnerabilidades.",
+      "Identifica servicios desactualizados y los cruza con bases de datos de vulnerabilidades conocidas.",
+      "Genera reportes detallados con nivel de criticidad (CVSS) y recomendaciones de mitigación.",
+      "Integración con la API de NVD (National Vulnerability Database).",
     ],
   },
   {
     title: "Grind SkateShop",
     github: "https://github.com/Timmy842/grind-skateshop",
+    tags: ["PHP", "Laravel", "JavaScript", "Tailwind CSS"],
+    category: "dev",
     description: [
-      "Este proyecto consiste en una tienda online de material de skate. Desarrollado con JavaScript y Ajax para el frontend, y con PHP y Laravel para el backend. También se usó Tailwind CSS para estilizar la página.",
+      "Tienda online de material de skate con carrito de compra, gestión de inventario y panel de administración.",
+      "Backend con PHP y Laravel: autenticación, sesiones seguras, y API RESTful.",
+      "Frontend dinámico con JavaScript y AJAX para experiencia sin recargas.",
+      "Estilizado con Tailwind CSS, diseño completamente responsive.",
     ],
   },
+];
+
+export const ctfPlatforms = [
+  {
+    name: "HackTheBox",
+    username: "Timmy842",
+    profileUrl: "https://www.hackthebox.com/profile/Timmy842",
+    icon: "htb",
+    stats: "Active member | Machines & Challenges",
+    color: "green",
+  },
+  {
+    name: "TryHackMe",
+    username: "Timmy842",
+    profileUrl: "https://tryhackme.com/p/Timmy842",
+    icon: "thm",
+    stats: "Active member | Learning Paths completed",
+    color: "red",
+  },
+];
+
+export const certRoadmap = [
+  { name: "eJPT (eLearnSecurity Junior Penetration Tester)", status: "target", issuer: "INE Security" },
+  { name: "CompTIA Security+", status: "target", issuer: "CompTIA" },
+  { name: "CEH (Certified Ethical Hacker)", status: "target", issuer: "EC-Council" },
+  { name: "OSCP (Offensive Security Certified Professional)", status: "goal", issuer: "Offensive Security" },
 ];
 
 export const awards = [
