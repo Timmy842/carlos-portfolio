@@ -302,16 +302,16 @@ export const projects = [
 export const ctfPlatforms = [
   {
     name: "HackTheBox",
-    username: "Timmy842",
-    profileUrl: "https://www.hackthebox.com/profile/Timmy842",
+    username: "TimmyPwn3d",
+    profileUrl: "https://www.hackthebox.com/profile/TimmyPwn3d",
     icon: "htb",
     stats: "Active member | Machines & Challenges",
     color: "green",
   },
   {
     name: "TryHackMe",
-    username: "Timmy842",
-    profileUrl: "https://tryhackme.com/p/Timmy842",
+    username: "TimmyPwn3d",
+    profileUrl: "https://tryhackme.com/p/TimmyPwn3d",
     icon: "thm",
     stats: "Active member | Learning Paths completed",
     color: "red",
@@ -319,10 +319,9 @@ export const ctfPlatforms = [
 ];
 
 export const certRoadmap = [
+  { name: "SEC1 Security Fundamentals", status: "target", issuer: "TryHackMe" },
   { name: "eJPT (eLearnSecurity Junior Penetration Tester)", status: "target", issuer: "INE Security" },
-  { name: "CompTIA Security+", status: "target", issuer: "CompTIA" },
-  { name: "CEH (Certified Ethical Hacker)", status: "target", issuer: "EC-Council" },
-  { name: "OSCP (Offensive Security Certified Professional)", status: "goal", issuer: "Offensive Security" },
+  { name: "CRTA (Certified Red Team Analyst)", status: "goal", issuer: "Alteredsecurity" },
 ];
 
 export const awards = [
