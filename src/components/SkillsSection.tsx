@@ -11,14 +11,16 @@ function SkillTag({
 }: {
   skill: string;
   index: number;
-  variant?: "security" | "redteam" | "default";
+  variant?: "security" | "redteam" | "blueteam" | "default";
 }) {
   const colorClass =
     variant === "security"
       ? "border-green-500/20 text-green-700 dark:text-green-400/90 bg-green-500/5"
       : variant === "redteam"
-        ? "border-cyan-500/20 text-cyan-700 dark:text-cyan-400/90 bg-cyan-500/5"
-        : "border-purple-500/10 bg-muted/80";
+        ? "border-red-500/20 text-red-700 dark:text-red-400/90 bg-red-500/5"
+        : variant === "blueteam"
+          ? "border-blue-500/20 text-blue-700 dark:text-blue-400/90 bg-blue-500/5"
+          : "border-purple-500/10 bg-muted/80";
 
   return (
     <motion.div
@@ -101,9 +103,9 @@ export default function SkillsSection() {
           </motion.div>
 
           <motion.div variants={skillCategoryVariants}>
-            <GlassCard className="p-4 dark:border-cyan-500/10">
+            <GlassCard className="p-4 dark:border-red-500/10">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-cyan-500">▶</span> Red Team &amp; Offensive
+                <span className="mr-2 text-red-500">▶</span> Red Team &amp; Offensive
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.redTeam.map((skill, index) => (
@@ -114,13 +116,13 @@ export default function SkillsSection() {
           </motion.div>
 
           <motion.div variants={skillCategoryVariants}>
-            <GlassCard className="p-4 dark:border-green-500/10">
+            <GlassCard className="p-4 dark:border-blue-500/10">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-green-500">■</span> Blue Team &amp; Defensive
+                <span className="mr-2 text-blue-500">■</span> Blue Team &amp; Defensive
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.blueTeam.map((skill, index) => (
-                  <SkillTag key={skill} skill={skill} index={index} variant="security" />
+                  <SkillTag key={skill} skill={skill} index={index} variant="blueteam" />
                 ))}
               </div>
             </GlassCard>
