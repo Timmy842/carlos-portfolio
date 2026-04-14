@@ -3,7 +3,7 @@ import { ctfPlatforms, certRoadmap } from "@/lib/data";
 import { GlassCard } from "./ui/glass-card";
 import MotionWrapper from "./MotionWrapper";
 import { motion } from "framer-motion";
-import { ExternalLink, Target, Flag, Trophy, Shield } from "lucide-react";
+import { ExternalLink, Target, Flag, Trophy, Shield, Swords } from "lucide-react";
 
 function PlatformCard({
   platform,
@@ -64,55 +64,11 @@ function PlatformCard({
   );
 }
 
-function RoadmapItem({
-  cert,
-  index,
-}: {
-  cert: (typeof certRoadmap)[number];
-  index: number;
-}) {
-  const isGoal = cert.status === "goal";
-  const isTarget = cert.status === "target";
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ delay: index * 0.1 }}
-      viewport={{ once: true }}
-      className="flex items-start gap-3"
-    >
-      <div
-        className={`mt-0.5 flex-shrink-0 w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-          isGoal
-            ? "border-yellow-500/60 bg-yellow-500/10"
-            : "border-cyan-500/60 bg-cyan-500/10"
-        }`}
-      >
-        <div
-          className={`w-2 h-2 rounded-full ${
-            isGoal ? "bg-yellow-500/70" : "bg-cyan-500/70"
-          }`}
-        />
-      </div>
-      <div className="flex-1 min-w-0">
-        <p className="text-sm font-medium leading-tight">{cert.name}</p>
-        <p className="text-xs text-muted-foreground mt-0.5">{cert.issuer}</p>
-      </div>
-      <span
-        className={`flex-shrink-0 text-xs px-2 py-0.5 rounded-full border ${
-          isGoal
-            ? "border-yellow-500/30 text-yellow-600 dark:text-yellow-400 bg-yellow-500/10"
-            : "border-cyan-500/30 text-cyan-600 dark:text-cyan-400 bg-cyan-500/10"
-        }`}
-      >
-        {isGoal ? "Objetivo" : "Próximo"}
-      </span>
-    </motion.div>
-  );
-}
-
 export default function CTFSection() {
+  const sharedCerts = certRoadmap.filter((c) => c.path === "both");
+  const redCerts = certRoadmap.filter((c) => c.path === "red");
+  const blueCerts = certRoadmap.filter((c) => c.path === "blue");
+
   return (
     <section id="ctf" className="py-12 relative">
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
@@ -134,14 +90,106 @@ export default function CTFSection() {
 
         <MotionWrapper delay={0.2}>
           <GlassCard className="p-5 dark:border-cyan-500/10">
-            <h3 className="text-base font-semibold mb-4 flex items-center gap-2">
+            <h3 className="text-base font-semibold mb-6 flex items-center gap-2">
               <Trophy className="h-5 w-5 text-cyan-500" />
               Roadmap de Certificaciones
             </h3>
-            <div className="space-y-4">
-              {certRoadmap.map((cert, index) => (
-                <RoadmapItem key={cert.name} cert={cert} index={index} />
+
+            {/* Shared foundation steps */}
+            <div className="space-y-3 mb-6">
+              {sharedCerts.map((cert, index) => (
+                <motion.div
+                  key={cert.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-start gap-3"
+                >
+                  <div className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full border-2 border-cyan-500/60 bg-cyan-500/10 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-cyan-500/70" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium leading-tight">{cert.name}</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">{cert.issuer}</p>
+                  </div>
+                  <span className="flex-shrink-0 text-xs px-2 py-0.5 rounded-full border border-cyan-500/30 text-cyan-600 dark:text-cyan-400 bg-cyan-500/10">
+                    Próximo
+                  </span>
+                </motion.div>
               ))}
+            </div>
+
+            {/* Branch split label */}
+            <div className="flex items-center gap-3 mb-4">
+              <div className="flex-1 h-px bg-border/50" />
+              <span className="text-xs text-muted-foreground px-2 font-mono whitespace-nowrap">
+                bifurcación de ruta
+              </span>
+              <div className="flex-1 h-px bg-border/50" />
+            </div>
+
+            {/* Dual path */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Red Team path */}
+              <div className="rounded-lg border border-red-500/20 bg-red-500/5 p-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <Swords className="h-4 w-4 text-red-400" />
+                  <span className="text-xs font-semibold uppercase tracking-wider text-red-400">
+                    Red Team
+                  </span>
+                </div>
+                <div className="space-y-3">
+                  {redCerts.map((cert, index) => (
+                    <motion.div
+                      key={cert.name}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.4 + index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="flex items-start gap-2"
+                    >
+                      <div className="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full border-2 border-red-500/50 bg-red-500/10 flex items-center justify-center">
+                        <div className="w-1.5 h-1.5 rounded-full bg-red-500/60" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs font-medium leading-tight">{cert.name}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5">{cert.issuer}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Blue Team path */}
+              <div className="rounded-lg border border-blue-500/20 bg-blue-500/5 p-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <Shield className="h-4 w-4 text-blue-400" />
+                  <span className="text-xs font-semibold uppercase tracking-wider text-blue-400">
+                    Blue Team / SOC
+                  </span>
+                </div>
+                <div className="space-y-3">
+                  {blueCerts.map((cert, index) => (
+                    <motion.div
+                      key={cert.name}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.4 + index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="flex items-start gap-2"
+                    >
+                      <div className="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full border-2 border-blue-500/50 bg-blue-500/10 flex items-center justify-center">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-500/60" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs font-medium leading-tight">{cert.name}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5">{cert.issuer}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             </div>
           </GlassCard>
         </MotionWrapper>

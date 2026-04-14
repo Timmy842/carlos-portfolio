@@ -350,10 +350,14 @@ export const ctfPlatforms = [
 ];
 
 export const certRoadmap = [
-  { name: "CompTIA Security+", status: "target", issuer: "CompTIA" },
-  { name: "BTL1 (Blue Team Labs Level 1)", status: "target", issuer: "Blue Team Labs Online" },
-  { name: "SC-200 (Microsoft Security Operations Analyst)", status: "goal", issuer: "Microsoft" },
-  { name: "CySA+ (CompTIA Cybersecurity Analyst)", status: "goal", issuer: "CompTIA" },
+  { name: "SEC1 Security Fundamentals", status: "target", issuer: "TryHackMe", path: "both" },
+  { name: "eJPT v2 (eLearnSecurity Junior Penetration Tester)", status: "target", issuer: "INE Security", path: "both" },
+  { name: "CompTIA Security+", status: "target", issuer: "CompTIA", path: "both" },
+  { name: "BTL1 (Blue Team Labs Level 1)", status: "target", issuer: "Blue Team Labs Online", path: "both" },
+  { name: "CRTS v2 (Certified Red Team Specialist)", status: "goal", issuer: "Cyber Warfare Labs", path: "red" },
+  { name: "SC-200 (Microsoft Security Operations Analyst)", status: "goal", issuer: "Microsoft", path: "blue" },
+  { name: "OSCP (Offensive Security Certified Professional)", status: "goal", issuer: "Offensive Security", path: "red" },
+  { name: "CySA+ (CompTIA Cybersecurity Analyst)", status: "goal", issuer: "CompTIA", path: "blue" },
 ];
 
 export const awards = [
@@ -386,23 +390,6 @@ export const awards = [
       "Windows",
       "Web Fundamentals",
       "How The Web Works",
-    ],
-  },
-  {
-    name: "CRTS v2 (Certified Red Team Specialist)",
-    institution: "Cyber Warfare Labs",
-    date: "2025",
-    credentialUrl: "#",
-    category: "security",
-    skills: [
-      "Red Team Operations",
-      "Active Directory",
-      "Lateral Movement",
-      "Privilege Escalation",
-      "C2 Frameworks",
-      "Evasion Techniques",
-      "Post-Exploitation",
-      "Pivoting",
     ],
   },
   {
