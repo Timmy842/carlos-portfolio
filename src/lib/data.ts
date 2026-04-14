@@ -351,10 +351,10 @@ export const ctfPlatforms = [
 
 export const certRoadmap = [
   { name: "SEC1 Security Fundamentals", status: "target", issuer: "TryHackMe", path: "both" },
-  { name: "eJPT v2 (eLearnSecurity Junior Penetration Tester)", status: "target", issuer: "INE Security", path: "both" },
   { name: "CJCA (Certified Junior Cybersecurity Analyst)", status: "target", issuer: "HackTheBox", path: "both" },
+  { name: "eJPT v2 (eLearnSecurity Junior Penetration Tester)", status: "target", issuer: "INE Security", path: "both" },
   { name: "CompTIA Security+", status: "target", issuer: "CompTIA", path: "both" },
-  { name: "BTL1 (Blue Team Labs Level 1)", status: "target", issuer: "Blue Team Labs Online", path: "both" },
+  { name: "BTL1 (Blue Team Labs Level 1)", status: "goal", issuer: "Blue Team Labs Online", path: "blue" },
   { name: "CRTS v2 (Certified Red Team Specialist)", status: "goal", issuer: "Cyber Warfare Labs", path: "red" },
   { name: "CDSA (Certified Defensive Security Analyst)", status: "goal", issuer: "HackTheBox", path: "blue" },
   { name: "CRTA (Certified Red Team Analyst)", status: "goal", issuer: "Cyber Warfare Labs", path: "red" },
