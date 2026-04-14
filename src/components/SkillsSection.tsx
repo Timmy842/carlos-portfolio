@@ -103,13 +103,13 @@ export default function SkillsSection() {
           </motion.div>
 
           <motion.div variants={skillCategoryVariants}>
-            <GlassCard className="p-4 dark:border-red-500/10">
+            <GlassCard className="p-4 dark:border-blue-500/10">
               <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
-                <span className="mr-2 text-red-500">▶</span> Red Team &amp; Offensive
+                <span className="mr-2 text-blue-500">◈</span> SOC &amp; SIEM Tools
               </h3>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                {skills.redTeam.map((skill, index) => (
-                  <SkillTag key={skill} skill={skill} index={index} variant="redteam" />
+                {skills.socTools.map((skill, index) => (
+                  <SkillTag key={skill} skill={skill} index={index} variant="blueteam" />
                 ))}
               </div>
             </GlassCard>
@@ -123,6 +123,19 @@ export default function SkillsSection() {
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {skills.blueTeam.map((skill, index) => (
                   <SkillTag key={skill} skill={skill} index={index} variant="blueteam" />
+                ))}
+              </div>
+            </GlassCard>
+          </motion.div>
+
+          <motion.div variants={skillCategoryVariants}>
+            <GlassCard className="p-4 dark:border-red-500/10">
+              <h3 className="text-lg font-medium mb-3 text-center md:text-left flex items-center">
+                <span className="mr-2 text-red-500">▶</span> Red Team &amp; Offensive
+              </h3>
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                {skills.redTeam.map((skill, index) => (
+                  <SkillTag key={skill} skill={skill} index={index} variant="redteam" />
                 ))}
               </div>
             </GlassCard>

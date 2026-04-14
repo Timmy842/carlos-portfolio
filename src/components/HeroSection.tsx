@@ -151,24 +151,36 @@ export default function HeroSection() {
               <div className="w-3 h-3 rounded-full bg-red-500/70"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-500/70"></div>
               <div className="w-3 h-3 rounded-full bg-green-500/70"></div>
-              <span className="ml-2 text-xs text-green-500/60 font-mono">~/carlos-portfolio — about.sh</span>
+              <span className="ml-2 text-xs text-green-500/60 font-mono">~/carlos-garcia — soc-analyst.sh</span>
             </div>
             {/* Terminal content */}
-            <div className="p-4 font-mono text-sm">
-              <div className="text-green-500/70 mb-1">
+            <div className="p-4 font-mono text-sm space-y-2">
+              <div>
                 <span className="text-cyan-500/80">carlos</span>
                 <span className="text-green-500/60">@</span>
-                <span className="text-cyan-500/80">hackwithcarlos</span>
+                <span className="text-cyan-500/80">soc-alicante</span>
                 <span className="text-green-500/60">:~$</span>
-                <span className="text-white/80 ml-2">cat about.txt</span>
+                <span className="text-white/80 ml-2">whoami</span>
               </div>
-              <p className="text-green-400/90 leading-relaxed mt-2">
+              <p className="text-green-400/90 leading-relaxed pl-2">
                 {personalInfo.description}
               </p>
-              <div className="text-green-500/70 mt-3">
+              <div className="pt-1">
                 <span className="text-cyan-500/80">carlos</span>
                 <span className="text-green-500/60">@</span>
-                <span className="text-cyan-500/80">hackwithcarlos</span>
+                <span className="text-cyan-500/80">soc-alicante</span>
+                <span className="text-green-500/60">:~$</span>
+                <span className="text-white/80 ml-2">cat skills.txt | grep SOC</span>
+              </div>
+              <div className="pl-2 flex flex-wrap gap-x-4 gap-y-1">
+                {["SIEM", "Splunk", "ELK Stack", "Wazuh", "Incident Response", "Threat Hunting", "Log Analysis", "IOC Analysis", "Wireshark", "MITRE ATT&CK"].map((s) => (
+                  <span key={s} className="text-blue-400/80 text-xs">✓ {s}</span>
+                ))}
+              </div>
+              <div>
+                <span className="text-cyan-500/80">carlos</span>
+                <span className="text-green-500/60">@</span>
+                <span className="text-cyan-500/80">soc-alicante</span>
                 <span className="text-green-500/60">:~$</span>
                 <span className="terminal-cursor text-white/50 ml-2"></span>
               </div>

@@ -5,7 +5,7 @@ export const personalInfo = {
   role: "Security Operations Center (SOC) Analyst",
   github: "https://github.com/Timmy842",
   linkedin: "https://www.linkedin.com/in/carlos-garcia-durendez/",
-  description: "¡Hola! Soy Carlos, un apasionado de la ciberseguridad con especial interés en pentesting, análisis forense y seguridad en redes. Me dedico a investigar y desarrollar herramientas de seguridad para identificar vulnerabilidades y fortalecer sistemas. En mi tiempo libre, realizo CTFs y experimentos prácticos para mejorar mis habilidades en hacking ético, pruebas de intrusión y mitigación de amenazas. Además, me gusta compartir conocimientos y colaborar en proyectos que contribuyan a un ecosistema digital más seguro. Siempre estoy en busca de nuevos retos y oportunidades para seguir creciendo en el mundo de la ciberseguridad. 🚀",
+  description: "Analista de Ciberseguridad con base sólida en desarrollo de software, especializado en operaciones de seguridad (SOC), detección de amenazas y respuesta a incidentes. Experiencia práctica con SIEM (Splunk, ELK Stack), análisis de tráfico de red con Wireshark y análisis forense digital. Mi perfil como desarrollador me permite automatizar tareas de seguridad, crear herramientas de análisis propias y entender vulnerabilidades desde dentro del código. Actualmente en búsqueda activa de oportunidades como SOC Analyst donde aplicar mis habilidades en monitorización, triaje de alertas y threat hunting.",
 };
 
 export const workExperience = [
@@ -118,6 +118,23 @@ export const skills = {
     "Gestión de identidades y accesos (IAM)",
     "Normativas y estándares de seguridad (ISO 27001, GDPR, PCI DSS)",
   ],
+  socTools: [
+    "Splunk",
+    "Microsoft Sentinel",
+    "ELK Stack (Elasticsearch, Logstash, Kibana)",
+    "IBM QRadar",
+    "SOAR",
+    "Wazuh",
+    "Graylog",
+    "TheHive",
+    "Cortex",
+    "MISP",
+    "OpenCTI",
+    "VirusTotal",
+    "ANY.RUN",
+    "Hybrid Analysis",
+    "CrowdStrike Falcon",
+  ],
   redTeam: [
     "Kali Linux",
     "Metasploit",
@@ -160,20 +177,22 @@ export const skills = {
     "Reverse Engineering",
   ],
   blueTeam: [
-    "Splunk",
-    "ELK Stack (Elasticsearch, Logstash, Kibana)",
     "SIEM (Security Information and Event Management)",
     "IDS/IPS (Intrusion Detection/Prevention Systems)",
     "Firewalls",
     "Antivirus/EDR solutions",
     "Incident response",
     "Threat hunting",
+    "Alert triage",
+    "IOC analysis",
+    "Phishing analysis",
+    "Log analysis",
     "Vulnerability management",
-    "Security awareness training",
     "Network segmentation",
     "Data loss prevention (DLP)",
     "Endpoint protection",
     "Security policies and procedures",
+    "MITRE ATT&CK",
   ],
   frontendDevelopment: [
     "React.js",
@@ -286,6 +305,18 @@ export const projects = [
     ],
   },
   {
+    title: "SOC Home Lab",
+    github: "https://github.com/Timmy842",
+    tags: ["ELK Stack", "Wazuh", "Splunk", "Python", "Bash"],
+    category: "security",
+    description: [
+      "Laboratorio de operaciones de seguridad montado en local con ELK Stack y Wazuh para ingesta, correlación y visualización de logs.",
+      "Simulación de ataques reales (fuerza bruta, escaneos, movimiento lateral) para generar alertas y practicar triaje.",
+      "Creación de reglas de detección personalizadas y dashboards de monitorización en Kibana.",
+      "Scripts en Python y Bash para automatización de respuesta a incidentes y enriquecimiento de IOCs.",
+    ],
+  },
+  {
     title: "Grind SkateShop",
     github: "https://github.com/Timmy842/grind-skateshop",
     tags: ["PHP", "Laravel", "JavaScript", "Tailwind CSS"],
@@ -319,10 +350,10 @@ export const ctfPlatforms = [
 ];
 
 export const certRoadmap = [
-  { name: "eJPT (eLearnSecurity Junior Penetration Tester)", status: "target", issuer: "INE Security" },
-  { name: "PNPT (Practical Network Penetration Tester)", status: "target", issuer: "TCM Security" },
-  { name: "CRTA (Certified Red Team Analyst)", status: "goal", issuer: "Cyber Warfare Labs" },
-  { name: "OSCP (Offensive Security Certified Professional)", status: "goal", issuer: "Offensive Security" },
+  { name: "CompTIA Security+", status: "target", issuer: "CompTIA" },
+  { name: "BTL1 (Blue Team Labs Level 1)", status: "target", issuer: "Blue Team Labs Online" },
+  { name: "SC-200 (Microsoft Security Operations Analyst)", status: "goal", issuer: "Microsoft" },
+  { name: "CySA+ (CompTIA Cybersecurity Analyst)", status: "goal", issuer: "CompTIA" },
 ];
 
 export const awards = [
@@ -355,6 +386,23 @@ export const awards = [
       "Windows",
       "Web Fundamentals",
       "How The Web Works",
+    ],
+  },
+  {
+    name: "CRTS v2 (Certified Red Team Specialist)",
+    institution: "Cyber Warfare Labs",
+    date: "2025",
+    credentialUrl: "#",
+    category: "security",
+    skills: [
+      "Red Team Operations",
+      "Active Directory",
+      "Lateral Movement",
+      "Privilege Escalation",
+      "C2 Frameworks",
+      "Evasion Techniques",
+      "Post-Exploitation",
+      "Pivoting",
     ],
   },
   {
