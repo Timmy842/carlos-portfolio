@@ -321,7 +321,7 @@ export const ctfPlatforms = [
 export const certRoadmap = [
   { name: "SEC1 Security Fundamentals", status: "target", issuer: "TryHackMe" },
   { name: "eJPT (eLearnSecurity Junior Penetration Tester)", status: "target", issuer: "INE Security" },
-  { name: "CRTA (Certified Red Team Analyst)", status: "goal", issuer: "Alteredsecurity" },
+  { name: "CRTA (Certified Red Team Analyst)", status: "goal", issuer: "Cyber Warfare Labs" },
 ];
 
 export const awards = [
@@ -330,6 +330,7 @@ export const awards = [
     institution: "TryHackMe",
     date: "March 2026",
     credentialUrl: "https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-THSGSPNZ8O.pdf",
+    category: "security",
     skills: [
       "Linux",
       "Networking",
@@ -346,6 +347,7 @@ export const awards = [
     institution: "TryHackMe",
     date: "March 2026",
     credentialUrl: "https://tryhackme.com/certificate/THM-ASNOMZVSYW",
+    category: "security",
     skills: [
       "Networking",
       "Linux",
@@ -359,6 +361,7 @@ export const awards = [
     institution: "Udemy",
     date: "December 2024",
     credentialUrl: "https://www.udemy.com/certificate/UC-4974c5d7-8aab-488f-89b3-82ca1f999eb7",
+    category: "security",
     skills: [
       "Shodan",
       "Maltego",
@@ -391,6 +394,7 @@ export const awards = [
     institution: "Udemy",
     date: "August 2022",
     credentialUrl: "https://www.udemy.com/certificate/UC-fa59fdf5-93b0-44ee-8601-173e90720ad4",
+    category: "dev",
     skills: [
       "NPM",
       "React Hooks",
@@ -403,6 +407,7 @@ export const awards = [
     institution: "Udemy",
     date: "July 2022",
     credentialUrl: "https://www.udemy.com/certificate/UC-819996c3-c183-4bc3-8854-14a9200df567",
+    category: "dev",
     skills: [
       "NPM",
       "Express.js",

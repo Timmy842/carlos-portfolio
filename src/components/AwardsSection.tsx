@@ -5,17 +5,8 @@ import MotionWrapper from "./MotionWrapper";
 import { GlassCard } from "./ui/glass-card";
 import { motion } from "framer-motion";
 
-const securityCerts = awards.filter((a) =>
-  a.skills.some((s) =>
-    ["Metasploit", "Burp Suite", "Nmap", "Wireshark", "SQL Injection"].includes(s)
-  )
-);
-const devCerts = awards.filter(
-  (a) =>
-    !a.skills.some((s) =>
-      ["Metasploit", "Burp Suite", "Nmap", "Wireshark", "SQL Injection"].includes(s)
-    )
-);
+const securityCerts = awards.filter((a) => a.category === "security");
+const devCerts = awards.filter((a) => a.category === "dev");
 
 function CertCard({
   certification,
