@@ -158,7 +158,7 @@ export default function HeroSection() {
               <div>
                 <span className="text-cyan-500/80">carlos</span>
                 <span className="text-green-500/60">@</span>
-                <span className="text-cyan-500/80">soc-alicante</span>
+                <span className="text-cyan-500/80">hackwithcarlos</span>
                 <span className="text-green-500/60">:~$</span>
                 <span className="text-white/80 ml-2">whoami</span>
               </div>
@@ -168,7 +168,7 @@ export default function HeroSection() {
               <div className="pt-1">
                 <span className="text-cyan-500/80">carlos</span>
                 <span className="text-green-500/60">@</span>
-                <span className="text-cyan-500/80">soc-alicante</span>
+                <span className="text-cyan-500/80">hackwithcarlos</span>
                 <span className="text-green-500/60">:~$</span>
                 <span className="text-white/80 ml-2">cat skills.txt | grep SOC</span>
               </div>
@@ -180,7 +180,7 @@ export default function HeroSection() {
               <div>
                 <span className="text-cyan-500/80">carlos</span>
                 <span className="text-green-500/60">@</span>
-                <span className="text-cyan-500/80">soc-alicante</span>
+                <span className="text-cyan-500/80">hackwithcarlos</span>
                 <span className="text-green-500/60">:~$</span>
                 <span className="terminal-cursor text-white/50 ml-2"></span>
               </div>
