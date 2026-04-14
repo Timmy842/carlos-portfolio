@@ -303,7 +303,7 @@ export const ctfPlatforms = [
   {
     name: "HackTheBox",
     username: "TimmyPwn3d",
-    profileUrl: "https://www.hackthebox.com/profile/TimmyPwn3d",
+    profileUrl: "https://app.hackthebox.com/users/865586",
     icon: "htb",
     stats: "Active member | Machines & Challenges",
     color: "green",
@@ -325,6 +325,35 @@ export const certRoadmap = [
 ];
 
 export const awards = [
+  {
+    name: "Cyber Security 101 Learning Path",
+    institution: "TryHackMe",
+    date: "March 2026",
+    credentialUrl: "https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-THSGSPNZ8O.pdf",
+    skills: [
+      "Linux",
+      "Networking",
+      "Web Security",
+      "Cryptography",
+      "Defensive Security",
+      "Offensive Security",
+      "SOC",
+      "Threat Intelligence",
+    ],
+  },
+  {
+    name: "Pre Security Learning Path",
+    institution: "TryHackMe",
+    date: "March 2026",
+    credentialUrl: "https://tryhackme.com/certificate/THM-ASNOMZVSYW",
+    skills: [
+      "Networking",
+      "Linux",
+      "Windows",
+      "Web Fundamentals",
+      "How The Web Works",
+    ],
+  },
   {
     name: "Curso completo de Hacking Ético y Ciberseguridad",
     institution: "Udemy",
