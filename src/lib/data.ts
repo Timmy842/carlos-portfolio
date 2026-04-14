@@ -319,9 +319,10 @@ export const ctfPlatforms = [
 ];
 
 export const certRoadmap = [
-  { name: "SEC1 Security Fundamentals", status: "target", issuer: "TryHackMe" },
   { name: "eJPT (eLearnSecurity Junior Penetration Tester)", status: "target", issuer: "INE Security" },
+  { name: "PNPT (Practical Network Penetration Tester)", status: "target", issuer: "TCM Security" },
   { name: "CRTA (Certified Red Team Analyst)", status: "goal", issuer: "Cyber Warfare Labs" },
+  { name: "OSCP (Offensive Security Certified Professional)", status: "goal", issuer: "Offensive Security" },
 ];
 
 export const awards = [
